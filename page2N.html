@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>RSS feed management</b></h1>
+  <p>Here are the different steps of this<span class="w3-tag">project</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/banner.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Introduction</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>A company is established on several sites. Each site has its own network and is managed by a local "systems and networks" team.
+        The network and system incidents, called events, are listed on each site. They give rise to the production of an RSS feed.
+        The company's central IT and networks department wants to have a global view of incidents.
+        Our job is to develop a program that aggregates the different RSS feeds and generates an HTML page presenting the aggregation of these feeds.</p>
+
+        <div class="additional-text-1" style="display:none;">
+            <p>------Installation of the program------
+                <br>
+                
+                First of all, the aggregator will be given to you in the form of a file, the machine will have to be launched with the command: kvm.
+                To install the program, you will start by connecting with the user aggreg followed by the password toto.
+                Once on the machine, please make sure that the IP addresses correspond to those of your network. To do this, you must modify the "/etc/hosts" file.
+                A verification of the packages is necessary, you must have on the machine the packages : pip3, python3, feedparser. The command to get them is : apt install your_package.
+                Once these installations are finished, make sure that the "conf.yaml" file is adapted to your network by modifying its parameters (url of the sites, destination to our HTML file, name of the feed).
+           <br>
+            </p>
+            <p>  
+                ------Program settings------
+                <br>
+                
+                For the configuration part, your program "aggreg.py" should be in the root with the conf.yaml file which will allow us to direct the program part in our HTML site.
+                If it is not the case, use the command in the directory where the program is located: mv aggreg.py /your_path
+                The HTML site should be in a separate directory with your CSS file to organize the visual (the /var/www/aggreg. directory)
+                Using the command: python3 aggreg.py, your program will run and the results will be sent to your HTML page.
+                To go to this page and see your information which is the title, category, server, publication date, link and description, you must enter the following link: http://aggreg.net/test.html on the "client" machine.
+                (The name of the page in this machine is test.html). The "client" machine will only be used to display the rss feeds.
+                For an automated reading of the feeds, you can change the execution schedule of cron and put the one you want. You must first install the "cron" package
+                package and thus modify the cron table with the command: crontab -e.
+            </p>
+          </div>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-1" ><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+      
+  <!-- entrée du blog -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="images/banner.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Details of aggreg.py</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p><u>Our program consists of several parts:</u><br></p>
+        <p></p>
+        - An "import" part<br>
+        - A function charge_urls(liste_url)<br>
+        - A function fusion_flux(liste_url, liste_flux)<br>
+        - A function genere_html(liste_evenements, chemin_html)<br>
+        - A « main() »<br>
+        </p>
+        
+        <div class="additional-text-2" style="display:none;">
+          <p><u>Import part:</u><br></p>
+            <p>
+                The lines of code in this part will allow us to import our libraries for the execution of our
+                execution of our program.<br>
+                Calendar: this module allows us to display a calendar or provides us with useful
+                functions related to the calendar.<br>
+                Unicodedata : this module gives access to the Unicode Character Database (UCD)
+                which defines the character properties for all Unicode characters.<br>
+                Feedparser : this module allows us to download and analyze syndicated feeds.<br>
+                Time : this module provides different functions related to time.<br>
+                Yaml: this module is commonly used for configuration files, but it is also used for data
+                also used for data storage.<br></p>
+          <p><u>Function charge_urls(liste_url) :</u><br></p>
+          This function retrieves the RSS documents, arranges them in a list. If a URL is
+          inaccessible, we put the value "None" in the list and return the list.<br>
+          We started the code with an initialization of an empty list that will allow us to
+          to host the rss feeds. We continue with a loop that processes each url in the
+          the list of url. The rss feeds are retrieved using the feedparser library. For the study of
+          our feed, we will study the case of "bozo". If this element contained in a feed is
+          equal to "False", we add the feed to the list. If it is not the case, we add None,
+          to say that the stream does not exist.<br>
+            <p><u>Part fusion_flux(liste_url, liste_flux) :</u><br></p>
+            
+            This function takes as parameters the same list of URLs as the
+            function and also a list of RSS documents like the one produced by the
+            function load_urls(list_url). It outputs a list where each element is a
+            dictionary describing an event from one of the sites. The keys of this dictionary
+            are: title, category, server, date_published, link, description.<br>
+            The beginning of the function results in an initialization of an empty list. For all the streams
+            present in the list of feeds and which are different from "None", we create variables
+            title, link, description, pudDate, guid and category. These variables retrieve the title, the link, the description, the date of
+            description, the publication date and the category of the event. Then, we
+            retrieve the name of the link according to the server and we add " http:// " because we want to launch it on the
+            want to launch it on the internet. We then create a dictionary in our list
+            initialized at the beginning of the function. The information stored inside is the title, the link, the description
+            description, the publication date, the category, the server and the handle.<br>
+            
+            <p><u>Part genere_html(liste_evenements, chemin_html) :</u><br></p>
+           
+            This function takes as parameters a list of events structured in the same way as the one produced by
+            produced by the merge_flux function in step 2, the path of the file that will contain the
+            generated HTML page.<br>
+            To start this function, we start by setting the time with a variable
+            local_time. Then we start the generation of our html site. The head tag
+            tag will be generated first, the body tag second and the articles last. Concerning the
+            articles, we will search in the list of events, the categories to separate them in
+            3: MAJOR, MINOR and CRITICAL. The creation of articles is done according to the name of the
+            category: if the name associated with category is "Minor", we generate an article. The same goes for
+            MAJOR and CRITICAL : if the name associated with category is " Major ", we generate an article and
+            if the name associated with category is "CRITICAL", we generate an article. In the rest of the program
+            program, we add the article tag to the body tag. Finally, we use
+            .writelines and .write to write in the page.<br>
+            <p><u>Part main :</u><br></p>
+            
+            This part will allow to open the conf.yaml file and execute the functions
+            previously explained.<br>
+            The main part will allow us to open the yaml file, our configuration file.<br>
+            We open our file with " with open ", it will be assigned the variable config.<br>
+            In a second step, we will retrieve the destination of the streams, their sources and the name
+            of the stream. Then we create an empty list called url. For each url in the list, we add the url + '/' + the name of the stream.
+            list, we add the url + '/' + the name of the stream. Finally, we call the 3 functions which are
+            liste_flux, fusion_flux and genere_html to make the whole program work.<br>
+            To design this python program, many tests and errors were made. The elaboration of the
+            code was quite complicated but I knew how to adapt and with the time given for this SAE, the
+            program could be completed. Some negative points can be noted like
+            the sorting chrono which does not work or the guid appearing twice in the HTML site.
+            <br>
+            Some
+            possible improvements are strongly possible, indeed I made my task more complex in my programming
+            in my programming of aggreg.py, the code could be written more simply and in a
+            in a more comprehensible way.<br></p>
+            
+            <p><u>See code :</u>
+            </p>
+            <img src="images/code_part1.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part2.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part3.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part4.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part5.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part6.png" alt="Description de l'image" style="width:50%">
+            <p> </p>
+        </div>
+      
+      
+      
+      
+      
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-2"><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- la fin du blog entries -->
+</div>
+
+<!-- menu d'introduction -->
+<div class="w3-col l4">
+  <!-- mon nom -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="images/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>SAE</b></h4>
+      <p>A project supervised by our university professor M.Wurbel.</p>
+    </div>
+  </div><hr>
+  
+  <!-- Postes -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Notions used</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="images/dedede.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Debian</span><br>
+        <span>project management with the Debian environment</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="images/script.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Scripting</span><br>
+        <span>Writing lines of code for the aggregation environment</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="images/python-logo-only.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Python</span><br>
+        <span>coding of python program for error handling</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="images/css.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">css</span><br>
+        <span>Style for the site we had to display</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+</div>
+</div><br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Récupération des boutons "Read More" par leur ID
+const readMoreBtn1 = document.getElementById("read-more-btn-1");
+const readMoreBtn2 = document.getElementById("read-more-btn-2");
+
+// Récupération des sections supplémentaires par leur classe CSS
+const additionalText1 = document.querySelector(".additional-text-1");
+const additionalText2 = document.querySelector(".additional-text-2");
+
+// Ajout d'un gestionnaire d'événement click pour chaque bouton "Read More"
+readMoreBtn1.addEventListener("click", function() {
+  if (additionalText1.style.display === "none") {
+    additionalText1.style.display = "block";
+    readMoreBtn1.innerText = "READ LESS «";
+  } else {
+    additionalText1.style.display = "none";
+    readMoreBtn1.innerText = "READ MORE »";
+  }
+});
+
+readMoreBtn2.addEventListener("click", function() {
+  if (additionalText2.style.display === "none") {
+    additionalText2.style.display = "block";
+    readMoreBtn2.innerText = "READ LESS «";
+  } else {
+    additionalText2.style.display = "none";
+    readMoreBtn2.innerText = "READ MORE »";
+  }
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project 4</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+
+button {
+  background-color: #4CAF50; /* couleur de fond */
+  border: none; /* suppression des bordures */
+  color: white; /* couleur du texte */
+  padding: 10px 20px; /* espacement intérieur */
+  text-align: center; /* alignement du texte */
+  text-decoration: none; /* suppression des soulignements de lien */
+  display: inline-block; /* affichage en ligne */
+  font-size: 16px; /* taille de police */
+  margin: 4px 2px; /* espacement extérieur */
+  cursor: pointer; /* curseur au survol */
+}
+
+
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Hotel management with Kivy</b></h1>
+  <p>Here are the different steps of this<span class="w3-tag">project</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/banner.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Hotel project report</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>I invite you to read the PDF report to understand the environment, the context of this project. The details, the progress and the result of this project are explained in a clear and comprehensive way.</p>
+
+        <div class="additional-text-1" style="display:none;">
+            <p></p>
+            <embed src="Cahier_des_charges,suivie de projet SORAGNA OCANA.pdf" type="application/pdf" width="100%" height="800px">
+          </div>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-1" ><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+      
+  <!-- entrée du blog -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="images/banner.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Project archives</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>You will find a button to download the archive of this document which is in .zip</p>
+        
+        <div class="additional-text-2" style="display:none;">
+          <p><u>Note: </u>You will need to modify the database information for the code to work. This archive includes only the physical part of the code but not the creation of the link between the application and the database</p>
+          <a href="SAE hotel.zip" download>
+            <button>Download the archive</button>
+          </a>
+        </div>
+      
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-2"><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- la fin du blog entries -->
+</div>
+
+<!-- menu d'introduction -->
+<div class="w3-col l4">
+  <!-- mon nom -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="images/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>SAE 302</b></h4>
+      <p>A project supervised by our university professor M.Madjarov</p>
+    </div>
+  </div><hr>
+  
+  <!-- Postes -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Notions used</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="images/python-logo-only.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Python</span><br>
+        <span>Writing the code for the management of parameters and buttons</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="images/Kivy_logo.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Kivy</span><br>
+        <span>Writing the code for the beauty and style of the application</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="images/database.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">base de données</span><br>
+        <span>User creation</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="images/MySQL.svg.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">MySQL</span><br>
+        <span>Commands to manage the database</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+</div>
+</div><br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Récupération des boutons "Read More" par leur ID
+const readMoreBtn1 = document.getElementById("read-more-btn-1");
+const readMoreBtn2 = document.getElementById("read-more-btn-2");
+
+// Récupération des sections supplémentaires par leur classe CSS
+const additionalText1 = document.querySelector(".additional-text-1");
+const additionalText2 = document.querySelector(".additional-text-2");
+
+// Ajout d'un gestionnaire d'événement click pour chaque bouton "Read More"
+readMoreBtn1.addEventListener("click", function() {
+  if (additionalText1.style.display === "none") {
+    additionalText1.style.display = "block";
+    readMoreBtn1.innerText = "READ LESS «";
+  } else {
+    additionalText1.style.display = "none";
+    readMoreBtn1.innerText = "READ MORE »";
+  }
+});
+
+readMoreBtn2.addEventListener("click", function() {
+  if (additionalText2.style.display === "none") {
+    additionalText2.style.display = "block";
+    readMoreBtn2.innerText = "READ LESS «";
+  } else {
+    additionalText2.style.display = "none";
+    readMoreBtn2.innerText = "READ MORE »";
+  }
+});
+</script>
+
+
+
+</body>
+</html>

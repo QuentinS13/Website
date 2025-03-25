@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projet 1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Traiter les données avec Twitter</b></h1>
+  <p>Voici les différentes étapes de ce<span class="w3-tag">projet</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/banner.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Introduction</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>La SAE concernant la programmation python est un projet dans lequel nous avons mis à l’épreuve
+        nos compétences en informatique pour résoudre des problématiques liées aux systèmes
+        d’information. En effet, les systèmes d’information génèrent une quantité gigantesque de données
+        pouvant être traitées avec des objectifs très variés comme le nettoyage de données, l’extraction
+        d’information et/ou l’archivage des données. D’une manière générale, le traitement de données se
+        fait en plusieurs étapes pour un développement des modèles permettant d’automatiser des tâches.
+        Donc, dans cette SAE, nous avons été amenés à développer des scripts permettant de réaliser les
+        différentes étapes composant le pipeline complet de l’analyse de données textuelles.
+        </p>
+
+        <div class="additional-text-1" style="display:none;">
+          <p>
+            <u>Partie 1 :</u>
+            </p>  
+          
+          <p>Les fonctionnalités des différents programmes que nous avons créent :
+            La première fonction va permettre d’initialiser notre environnement de travail en créant l'arborescence suivante :
+            </p>
+            <img src="images/arbo.png" alt="Description de l'image">
+            <p> <u>Programme 2</u> : Cette fonction va nous permettre de compter le nombre de lignes et de mots du
+              fichier « nom_fichier ». La fonction prend en entrée le fichier « nom_fichier » qu’on suppose
+              existant et renverra une liste de deux éléments dont le premier est le nombre de lignes, le second le
+              nombre de mots du fichier.<br>
+              <u>Programme 3</u> : Cette fonction va nous permettre de compter les lignes et les mots dans chacun des
+              fichiers de la liste « liste_fichiers ». La fonction prendra en entrée une liste de fichiers « liste_fichiers »
+              et renverra une liste dont chaque élément est une liste de deux éléments.<br>
+              <u>Programme 4: </u> Cette fonction va nous permettre de recenser tous les mots utilisés dans le fichier 
+              « nom_fichier » et va compter le nombre d’utilisations de chacun de ces mots. <br>
+              <u>Programme 5 :</u> Cette fonction va nous permettre de recenser tous les mots utilisés dans l’ensemble 
+              des fichiers de la liste « liste_fichiers » et va compter le nombre d’utilisations de chacun de ces mots 
+              dans chacun des fichiers.<br>
+              <u>Programme 6 :</u> Cette fonction va nous permettre de calculer la fréquence d’apparition des 15 mots 
+              apparaissant le plus fréquemment dans chacun des fichiers de la liste « liste_fichiers ».<br>
+            </p>
+            <p>
+              <u>Partie 2 :</u>
+            </p>
+            <p>
+              <br>
+              <u>Programme 1 :</u> Cette fonction va nous permettre de recenser tous les fichiers contenus dans le 
+              répertoire rep dans une liste « liste_fichiers_rep ». Cette fonction doit aussi recenser tous les mots 
+              utilisés dans l’ensemble de chacun de ces mots dans chacun des fichiers.<br>
+              <u>Programme 2 :</u> Cette fonction calcule la fréquence d’apparition des 15 mots apparaissant le plus 
+              fréquemment dans chacun des fichiers contenus dans le répertoire « rep ».<br>
+              <u>Programme 3 :</u> Cette fonction va nous permettre de calculer la fréquence d’apparition d’un mot 
+              donné en entrée par l’utilisateur dans chacun des fichiers contenus dans le répertoire « rep »<br>
+              <u>Programme 4 :</u> Cette fonction va nous permettre de lire tous les tweets contenus dans tous les 
+              fichiers contenus dans le répertoire « rep »<br>
+            <u>Programme 5 :</u> Cette fonction compte le nombre de tweet par journée. Nous devons modifier le 
+              programme précédent pour créer cette fonction. Le résultat sera sous forme de graphique.<br>
+            <u>Programme 6 :</u> Cette fonction calcule la fréquence d’apparition d’un mot donné en entrée par 
+              l’utilisateur par jour sur l’ensemble des tweets contenus dans les fichiers contenus dans le répertoire 
+              « rep ». Le résultat de cette fonction sera sous forme de graphique.
+
+            </p>
+          
+          
+          
+          </div>
+         
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-1" ><b>LIRE PLUS »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+      
+  <!-- entrée du blog -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="images/banner.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Réalisation des fonctionnalités</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>Pour le commencement de la SAE, j’ai tout d’abord commencé à créer une arborescence en utilisant 
+        la fonction MKDIR. Cette arborescence correspond aux chemins et fichiers qui nous seront utiles 
+        pour réaliser ce projet. 
+        Ensuite, pour la seconde fonction, j’ai développé des conditions pour définir un mot. Après avoir 
+        ouvert le fichier, le programme compte les lignes tant qu’il n’est pas arrivé à un certain caractère que 
+        l’on a défini. Pour le compteur de mot, et pour les lignes, si le caractère n’est pas dans la liste, on fait 
+        +1 au compteur en question.</p>
+        
+        <div class="additional-text-2" style="display:none;">
+          <p>Pour la fonction 3, on va ouvrir les fichiers individuellement pour ensuite les ajouter dans une liste 
+            qui stockera tous les fichiers. 
+            Pour la 4ème fonction, nous allons faire appel à la notion « split » qui nous permettra de séparer les 
+            mots. Avec « count », on comptera donc le nombre de mots. <br>
+            <p></p>
+            Pour la 5ème fonction, j’ai eu beaucoup de mal, je ne saurais l’expliquer clairement.
+            Pour la 6ème fonction, on commence toujours avec le même procédé. On ouvre nos fichiers, on lit 
+            ligne par ligne, et découpe chaque mot grâce à la fonction « split ». Cependant, cette fois, on veut les 
+            15 mots les plus utilisés. On initialise alors une variable valeur max à 0. Puis, pour tous les éléments 
+            allant de 0 à 15, pour les éléments de la première liste, si l’élément n’est pas dans la première liste, 
+            ainsi que si l’élément 1 est supérieur ou égal à la valeur maximum, alors on met dans une variable 
+            mot, l’élément 0, puis dans une variable fréquence, on met l’élément 1, et la valeur max devient 
+            alors l’élément 1. On ajoute grâce à la fonction « append », dans notre première liste, et on 
+            réinitialise notre variable valeur max, en la mettant à 0. Et pour finir, on ajoute à la liste de tous nos 
+            fichiers, la première liste.<br>
+            <p></p>
+            Dans la partie 2, pour l’exercice 1, j’ai importé la partie 1 dans la partie 2 car j’avais besoin de 
+            l’exercice 4, j’ai aussi importé la bibliothèque « matplotlib » pour tracer les graphiques. Pour cet 
+            exercice, l’utilisation de l’exercice 4 de la partie 1 nous permet de récupérer la liste de mots. Nous 
+            convertissons cette liste en dictionnaire avec la variable « dict ». <br>
+            <p></p>
+            Ensuite, notre deuxième fonction va nous permettre de compter les 15 mots les plus fréquents. Pour 
+            y parvenir, j’ai créé un compteur de mot et de fréquence, avec des multiples listes à utiliser. On va 
+            alors parcourir la liste des mots, et tant que la liste est différente de 15, on va ajouter au compteur 
+            de fréquence la valeur du dictionnaire, et au compteur de mot, la clé du dictionnaire. <br>
+            <p></p>
+            Pour finir, on retourne la liste de tous les mots, avec un dictionnaire comprenant les 15 mots les plus 
+            fréquemment utiliser.
+            Dans notre 3ème fonction, on doit demander à l’utilisateur de saisir un mot. La fonction va parcourir
+            la liste de tous les fichiers, et va les ouvrir individuellement. Elle sépare chaque mot, puis compte 
+            le nombre de mot. <br>
+            <p></p>
+            On ajoute ce résultat à la fréquence variable, puis dans une autre liste on ajoute le mot de 
+            l’utilisateur, puis la fréquence du mot. Nous convertissons la liste en dictionnaire afin de récupérer 
+            les valeurs des clés et valeurs du dictionnaire pour simplifier notre tâche lors de l’affichage 
+            graphique. <br>
+            <p></p>
+            Pour la 4eme fonction, nous listons à nouveau tous les fichiers. Encore une fois, nous décomposons 
+            tous les mots de chaque ligne, ligne par ligne, puis si nous trouvons un mot précis, nous ajoutons 
+            cette ligne à une liste appelée tweet. <br>
+            <p></p>
+            Ensuite, nous allons ajouter les mots des tweets dans tweet_vide, pour chaque élément de la 
+            longueur de la liste de toutes les dates, on créait une liste qui prendra la liste de toutes les dates, ainsi 
+            que le tweet correspondant.<br>
+            <p></p>
+            Pour la 5ème fonction, nous reprenons et modifions l’exercice 4, plus précisément la partie où l’on
+            prend toutes les dates. Grâce à la fonction « count », on va pouvoir compter combien de fois on
+            retrouve la même dans la liste de toutes les dates. Puis, pour les dates dans notre compteur de date
+            créée auparavant, si les dates ne sont pas dans le compteur de fréquences de date, alors on ajoute la
+            date dans notre fréquence de date. Une fois de plus, on convertit notre liste de date en dictionnaire
+            pour ensuite créer un résultat graphique.</p>
+        </div>
+      
+      
+      
+      
+      
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-2"><b>LIRE PLUS »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- la fin du blog entries -->
+</div>
+
+<!-- menu d'introduction -->
+<div class="w3-col l4">
+  <!-- mon nom -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="images/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>SAE105</b></h4>
+      <p>Un projet encadré avec nos professeurs universitaires M.Wurbel et M.Rabah</p>
+    </div>
+  </div><hr>
+  
+  <!-- Postes -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Notions utilisées</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="images/python-logo-only.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Python</span><br>
+        <span>Fonctions et programmes codés</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="images/script.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Scripting</span><br>
+        <span>Traitement de fichiers de configuration</span>
+      </li> 
+      
+    </ul>
+  </div>
+  <hr> 
+</div>
+</div><br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Récupération des boutons "Read More" par leur ID
+const readMoreBtn1 = document.getElementById("read-more-btn-1");
+const readMoreBtn2 = document.getElementById("read-more-btn-2");
+
+// Récupération des sections supplémentaires par leur classe CSS
+const additionalText1 = document.querySelector(".additional-text-1");
+const additionalText2 = document.querySelector(".additional-text-2");
+
+// Ajout d'un gestionnaire d'événement click pour chaque bouton "Read More"
+readMoreBtn1.addEventListener("click", function() {
+  if (additionalText1.style.display === "none") {
+    additionalText1.style.display = "block";
+    readMoreBtn1.innerText = "LIRE MOINS «";
+  } else {
+    additionalText1.style.display = "none";
+    readMoreBtn1.innerText = "LIRE PLUS »";
+  }
+});
+
+readMoreBtn2.addEventListener("click", function() {
+  if (additionalText2.style.display === "none") {
+    additionalText2.style.display = "block";
+    readMoreBtn2.innerText = "LIRE MOINS «";
+  } else {
+    additionalText2.style.display = "none";
+    readMoreBtn2.innerText = "LIRE PLUS  »";
+  }
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Projet 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Gestion des flux RSS</b></h1>
+  <p>Voici les différentes étapes de ce<span class="w3-tag">projet</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/banner.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Introduction</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>Un entreprise est implantée sur plusieurs sites. Chaque site possède son propre réseau et est administré par une équipe "systèmes et réseaux" locale.
+        Les incidents réseau et système, appelés par la suite événements, sont répertoriés sur chaque site. Ils donnent lieu à la production d'un flux RSS.
+        Le service central Informatique & Réseaux de l'entreprise souhaite avoir une vue globale des incidents.
+        Notre travail est de développer un programme réalisant l'agrégation des différents flux RSS et générant une page HTML présentant l'aggrégation de ces flux.</p>
+
+        <div class="additional-text-1" style="display:none;">
+            <p>------Installation du programme------
+                <br>
+                
+                Tout d'abord, l'agrégateur vous sera donné sous forme de fichier, la machine devra être lancée avec la commande : kvm.
+                Pour l'installation du programme, vous allez commencer par vous connecter avec l'utilisateur aggreg suivit du mot de passe toto.
+                Une fois sur la machine, veuillez bien à ce que les adresses IP correspondent à celles de votre réseau. Pour ce faire, il faut modifier le fichier "/etc/hosts".
+                Une vérification des paquets est nécessaire, vous devez avoir sur la machine les paquets : pip3, python3, feedparser. La commande pour les obtenir est : apt install votre_paquet.
+                Une fois ces installations terminées, assurez-vous que le fichier "conf.yaml" soit adapté à votre réseau en modifiant les paramètres de celui-ci (url des sites, destination vers notre fichier HTML, nom du flux).
+           <br>
+            </p>
+            <p>  
+                ------Paramétrage du programme------
+                <br>
+                
+                Pour la partie paramétrage, votre programme "aggreg.py" devra se retrouver dans la racine avec le fichier conf.yaml qui va nous permettre de diriger la partie programme dans notres site HTML.
+                Si ce n'est pas le cas, utilisez la commmande dans le répertoire où le programme se situe : mv aggreg.py /votre_chemin
+                Le site HTML devra se retrouver dans un répertoire à part avec votre fichier CSS pour organiser le visuel (le répertoire /var/www/aggreg.)
+                Au moyen de la commande : python3 aggreg.py, votre programme se lancera et les résultats seront envoyés sur votre page HTML.
+                Pour aller sur cette page et voir vos informations qui sont le titre, la catégorie, le serveur, la date de publication, le lien et la description, vous devez entrer le lien suivant : http://aggreg.net/test.html sur la machine "client".
+                (Le nom de la page dans cette machine est test.html). La machine "client" nous servira uniquement à afficher les flux rss.
+                Pour une lecture de flux automatisée, vous pouvez changer l'horaire d'exécution de cron et mettre celle que vous souhaitez. Vous devez au préalable installer le paquet "cron"
+                et donc modifier la table de cron avec la commande : crontab -e.
+                
+            </p>
+          </div>
+
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-1" ><b>LIRE PLUS »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+      
+  <!-- entrée du blog -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="images/banner.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Détails de aggreg.py</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p><u>Notre programme se compose en plusieurs parties :</u><br></p>
+        <p></p>
+        - Une partie « import »<br>
+        - Une fonction charge_urls(liste_url)<br>
+        - Une fonction fusion_flux(liste_url, liste_flux)<br>
+        - Une fonction genere_html(liste_evenements, chemin_html)<br>
+        - Un « main() »<br>
+        </p>
+        
+        <div class="additional-text-2" style="display:none;">
+          <p><u>Partie import :</u><br></p>
+            <p>
+            Les lignes de codes de cette partie vont permettre d’importer nos bibliothèques pour
+            l’exécution de notre programme.<br>
+            Calendar : ce module nous permet d’afficher un calendrier ou nous fournit des fonctions
+            utiles relatives au calendrier.<br>
+            Unicodedata : ce module donne accès à la base de données des caractères Unicode (UCD)
+            qui définit les propriétés des caractères pour tous les caractères Unicode.<br>
+            Feedparser : ce module nous permet de télécharger et d'analyser des flux syndiqués.<br>
+            Time : ce module fournit différentes fonctions liées au temps.<br>
+            Yaml : ce module est couramment utilisé pour les fichiers de configuration, mais il est
+            également utilisé pour le stockage des données.<br></p>
+          <p><u>Fonction charge_urls(liste_url) :</u><br></p>
+            Cette fonction récupère les documents RSS, les range dans une liste. Si une URL est
+            inaccessible, on range la valeur « None » dans la liste et renvoie la liste.<br>
+            Nous avons commencé le code par une initialisation d’une liste vide qui nous permettra
+            d’accueillir les flux rss. Nous continuons avec une boucle qui traite chaque url présente dans
+            la liste des url. Les flux rss sont récupérés grâce à la bibliothèque feedparser. Pour l’étude de
+            notre flux, nous allons étudier le cas de « bozo ». Si cet élément contenu dans un flux est
+            égal à « False », nous ajoutons le flux dans la liste. Si ce n’est pas le cas, nous ajoutons None,
+            pour dire que le flux n’existe pas.<br>
+            <p><u>Partie fusion_flux(liste_url, liste_flux) :</u><br></p>
+            
+            Cette fonction prend en paramètres la même liste d’URLs que la fonction
+            charge_urls(liste_url) et aussi une liste de documents RSS telle que celle produite par la
+            fonction charge_urls(liste_url). Elle produit en sortie une liste dont chaque élément est un
+            dictionnaire décrivant un événement provenant d’un des sites. Les clés de ce dictionnaire
+            sont : titre, catégorie, serveur, date_publi, lien, description.<br>
+            Le début de la fonction se traduit par une initialisation d’une liste vide. Pour tous les flux
+            présents dans la liste des flux et qui sont différents de « None », Nous créons des variables
+            titre, lien, description, pudDate, guid et category. Ces variables récupèrent donc le titre, le
+            lien, la description, la date de publication et la catégorie de l’évènement. Ensuite, nous
+            récupérons le nom du lien en fonction du serveur et on lui rajoute « http:// » car nous
+            voulons le lancer sur internet. Nous créons par la suite un dictionnaire dans notre liste
+            initialisée en début de fonction. Les informations stockées à l’intérieur sont le titre, le lien, la
+            description, la date de publication, la catégorie, le serveur et le guid.<br>
+            
+            <p><u>Partie genere_html(liste_evenements, chemin_html) :</u><br></p>
+           
+            Cette fonction prend en paramètres une liste d’évènements structurée de façon identique à
+            celle produite par la fonction fusion_flux de l’étape 2, le chemin du fichier qui contiendra la
+            page HTML générée.<br>
+            Pour le début de cette fonction, nous commençons par définir l’heure avec une variable
+            local_time. Puis nous abordons le sujet de la génération de notre site html. La balise head
+            sera générée en première, celle du body en second et les articles en dernier. Concernant les
+            articles, nous allons chercher dans la liste des évènements, les catégories pour les séparer en
+            3 : MAJOR, MINOR et CRITICAL. La création des articles se fait suivant le nom de la
+            catégorie : si le nom associé à category est « Minor », nous générons un article. Pareil pour
+            MAJOR et CRITICAL, : si le nom associé à category est « Major », nous générons un article et
+            si le nom associé à category est « CRITICAL », nous générons un article. Dans la suite du
+            programme, nous ajoutons la balise article dans la balise body. Pour finir, nous utilisons
+            .writelines et .write pour écrire dans la page.<br>
+            <p><u>Partie main :</u><br></p>
+            
+            Cette partie va permettre d’ouvrir le fichier conf.yaml et exécuter les fonctions
+            précédemment expliquées.<br>
+            La partie main va nous permettre d’ouvrir le fichier yaml, soit notre fichier de configuration.<br>
+            Nous ouvrons notre fichier avec « with open », celui-ci se verra affecté la variable config.<br>
+            Dans un second temps, nous allons récupérer la destination des flux, leurs sources et le nom
+            du flux. Puis nous créons une liste vide se nommant url. Pour chaque url présente dans la
+            liste, on ajoute l’url + ’/’ + le nom du flux. Enfin, nous appelons les 3 fonctions qui sont
+            liste_flux, fusion_flux et genere_html pour faire marcher l’intégralité du programme.<br>
+            Pour concevoir ce programme python, les test et erreurs ont été nombreux. L’élaboration du
+            code était assez compliquée mais j’ai su m’adapter et avec le temps donné pour cette SAE, le
+            programme a pu donc être complété. Quelques points négatifs peuvent être relevés comme
+            le tri chrono qui ne fonctionne pas ou le guid apparaissant deux fois dans le site HTML. 
+            <br>
+            Des
+            améliorations possibles sont fortement envisageables, en effet je me suis complexé la tâche
+            dans ma programmation de aggreg.py, le code pouvait être écrit plus simplement et de
+            manière plus compréhensible.<br></p>
+            
+            <p><u>Voir code : </u>
+            </p>
+            <img src="images/code_part1.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part2.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part3.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part4.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part5.png" alt="Description de l'image" style="width:100%">
+            <p> </p>
+            <img src="images/code_part6.png" alt="Description de l'image" style="width:50%">
+            <p> </p>
+        </div>
+      
+      
+      
+      
+      
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-2"><b>LIRE PLUS »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- la fin du blog entries -->
+</div>
+
+<!-- menu d'introduction -->
+<div class="w3-col l4">
+  <!-- mon nom -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="images/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>SAE</b></h4>
+      <p>Un projet encadré avec notre professeur universitaire M.Wurbel.</p>
+    </div>
+  </div><hr>
+  
+  <!-- Postes -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Notions utilisées</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="images/dedede.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Debian</span><br>
+        <span>gestion du projet avec l'environnement Debian</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="images/script.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Scripting</span><br>
+        <span>Ecriture de lignes de code pour l'environnement d'aggreg</span>
+      </li> 
+      <li class="w3-padding-16">
+        <img src="images/python-logo-only.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Python</span><br>
+        <span>codage du programme python pour la gestion d'erreurs</span>
+      </li>   
+      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+        <img src="images/css.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">css</span><br>
+        <span>Style pour le site que nous devions afficher</span>
+      </li>  
+    </ul>
+  </div>
+  <hr> 
+</div>
+</div><br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Récupération des boutons "Read More" par leur ID
+const readMoreBtn1 = document.getElementById("read-more-btn-1");
+const readMoreBtn2 = document.getElementById("read-more-btn-2");
+
+// Récupération des sections supplémentaires par leur classe CSS
+const additionalText1 = document.querySelector(".additional-text-1");
+const additionalText2 = document.querySelector(".additional-text-2");
+
+// Ajout d'un gestionnaire d'événement click pour chaque bouton "Read More"
+readMoreBtn1.addEventListener("click", function() {
+  if (additionalText1.style.display === "none") {
+    additionalText1.style.display = "block";
+    readMoreBtn1.innerText = "LIRE MOINS «";
+  } else {
+    additionalText1.style.display = "none";
+    readMoreBtn1.innerText = "LIRE PLUS »";
+  }
+});
+
+readMoreBtn2.addEventListener("click", function() {
+  if (additionalText2.style.display === "none") {
+    additionalText2.style.display = "block";
+    readMoreBtn2.innerText = "LIRE MOINS «";
+  } else {
+    additionalText2.style.display = "none";
+    readMoreBtn2.innerText = "LIRE PLUS »";
+  }
+});
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Project 1</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Handling data with Twitter</b></h1>
+  <p>Here are the different steps of this<span class="w3-tag">project</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="images/banner.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Introduction</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>The SAE concerning python programming is a project in which we put our computer science skills to the test
+        our computer science skills to solve problems related to information systems.
+        information systems. Indeed, information systems generate a huge amount of data that can be processed for various
+        that can be processed for various purposes such as data cleansing, information extraction and/or
+        and/or archiving of data. Generally speaking, data processing is done in several stages for a
+        In general, data processing is done in several steps for the development of models allowing the automation of tasks.
+        Thus, in this SAE, we were led to develop scripts allowing to carry out the various stages
+        different stages composing the complete pipeline of the analysis of textual data.
+        </p>
+
+        <div class="additional-text-1" style="display:none;">
+          <p>
+            <u>Part 1:</u>
+            </p>  
+          
+          <p>The functionalities of the different programs we have created:
+            The first function will initialize our working environment by creating the following tree structure:
+            </p>
+            <img src="images/arbo.png" alt="Description de l'image">
+            <p> <u>Program 2</u> : This function will allow us to count the number of lines and words in the
+                file " file_name ". The function takes as input the file " file_name " which we suppose to exist and will return a list of two elements
+                file and will return a list of two elements, the first of which is the number of lines, the second the number of
+                number of words in the file.<br>
+              <u>Program 3</u> : This function will allow us to count the lines and words in each of the files in the
+              files in the list "list_files". The function will take as input a list of files " list_files " and return a list where each element is a list of two elements.
+              and will return a list where each element is a list of two elements.<br>
+              <u>Program 4: </u> This function will allow us to list all the words used in the file 
+              "file and will count the number of uses of each of these words.<br>
+              <u>Program 5 :</u> This function will allow us to list all the words used in all the files of the list 
+              of the files in the list " liste_fichiers " and will count the number of uses of each of these words 
+              in each file.<br>
+              <u>Program 6 :</u> This function will allow us to calculate the frequency of appearance of the 15 words 
+              appearing most frequently in each of the files of the list " liste_fichiers ".<br>
+            </p>
+            <p>
+              <u>Part 2 :</u>
+            </p>
+            <p>
+              <br>
+              <u>Program 1 :</u> This function will allow us to list all the files contained in the 
+              rep directory in a list " liste_fichiers_rep ". This function must also list all the words 
+              used in the set of each of these words in each of the files.<br>
+              <u>Program 2 :</u> This function calculates the frequency of appearance of the 15 words appearing most frequently in each of the 
+              frequently in each of the files contained in the "rep" directory.<br>
+              <u>Program 3 :</u> This function will allow us to calculate the frequency of appearance of a word 
+              given as input by the user in each of the files contained in the "rep" directory<br>
+              <u>Program 4 :</u> This function will allow us to read all the tweets contained in all the 
+              files contained in the "rep" directory<br>
+            <u>Program 5 :</u> This function counts the number of tweets per day. We have to modify the 
+            previous program to create this function. The result will be a graph.<br>
+            <u>Program 6 :</u> This function calculates the frequency of appearance of a word given in input by the user 
+            the user per day on all the tweets contained in the files contained in the "rep" directory. 
+            "rep" directory. The result of this function will be a graph.
+            </p>
+          
+          
+          
+          </div>
+         
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-1" ><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+      
+  <!-- entrée du blog -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="images/banner.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Realization of the functionalities</b></h3>
+      <h5>SAE
+    </div>
+
+    <div class="w3-container">
+      <p>For the beginning of the SAE, I first started to create a tree structure using 
+        the MKDIR function. This tree structure corresponds to the paths and files that will be useful for us 
+        to realize this project. 
+        Then, for the second function, I developed conditions to define a word. After having 
+        opened the file, the program counts the lines until it has reached a certain character that we have defined. 
+        defined. For the word counter, and for the lines, if the character is not in the list, we do 
+        +1 to the counter in question.</p>
+        
+        <div class="additional-text-2" style="display:none;">
+          <p>For function 3, we will open the files individually and then add them to a list 
+            which will store all the files. 
+            For the 4th function, we will use the notion "split" which will allow us to separate the 
+            words. With " count ", we will count the number of words. <br>
+            <p></p>
+            For the 5th function, I had a lot of trouble, I can't explain it clearly.
+            For the 6th function, we always start with the same process. We open our files, we read 
+            line by line, and split each word with the "split" function. However, this time, we want the 
+            15 most used words. So we initialize a max value variable to 0. Then, for all the elements 
+            from 0 to 15, for the elements of the first list, if the element is not in the first list, 
+            as well as if the element 1 is greater than or equal to the maximum value, then we put in a variable 
+            word, the element 0, then in a frequency variable, we put the element 1, and the max value becomes 
+            We add thanks to the "append" function, in our first list, and we reset our max value variable. 
+            reinitialize our variable max value, by putting it at 0. And to finish, we add to the list of all our 
+            files, the first list.<br>
+            <p></p>
+            In part 2, for exercise 1, I imported part 1 into part 2 because I needed 
+            exercise 4, I also imported the library "matplotlib" to draw the graphs. For this 
+            exercise, the use of the exercise 4 of the part 1 allows us to recover the word list. We 
+            convert this list into a dictionary with the variable "dict".<br>
+            <p></p>
+            Then, our second function will allow us to count the 15 most frequent words. To 
+            do this, I have created a word and frequency counter, with multiple lists to use. We will 
+            then go through the list of words, and as long as the list is different from 15, we will add to the frequency counter 
+            the value of the dictionary, and to the word counter, the key of the dictionary.<br>
+            <p></p>
+            Finally, we return a list of all the words, with a dictionary of the 15 most frequently used words. 
+            frequently used words.
+            In our 3rd function, we have to ask the user to enter a word. The function will go through
+            the list of all files, and will open them individually. It separates each word, and then counts 
+            the number of words.<br>
+            <p></p>
+            We add this result to the variable frequency, then in another list we add the word of the user, then the frequency of the word. 
+            and then the frequency of the word. We convert the list into a dictionary in order to recover 
+            the values of the keys and values of the dictionary to simplify our task when displaying 
+            graphic display.<br>
+            <p></p>
+            For the 4th function, we list all the files again. Once again, we break down 
+            all the words in each line, line by line, and then if we find a specific word, we add that line to a list 
+            that line to a list called tweet. <br>
+            <p></p>
+            Next, we will add the words of the tweets in tweet_empty, for each element of the length of the list of all dates, we would create a list that will take the list of all dates. 
+            length of the list of all dates, we create a list that will take the list of all dates, as well as 
+            and the corresponding tweet.<br>
+            <p></p>
+            For the 5th function, we take up and modify the exercise 4, more precisely the part where we take all the dates.
+            all the dates. Thanks to the "count" function, we will be able to count how many times we
+            the same one in the list of all the dates. Then, for the dates in our date counter
+            counter created before, if the dates are not in the date frequency counter, then we add the date to our
+            date in our date frequency. Once again, we convert our date list into a dictionary
+            and then create a graphical result.</p>
+        </div>
+      
+      
+      
+      
+      
+        <div class="w3-row">
+        <div class="w3-col m8 s12">
+          <p><button class="w3-button w3-padding-large w3-white w3-border" id="read-more-btn-2"><b>READ MORE »</b></button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- la fin du blog entries -->
+</div>
+
+<!-- menu d'introduction -->
+<div class="w3-col l4">
+  <!-- mon nom -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="images/banner.jpg" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>SAE105</b></h4>
+      <p>A project supervised by our university professors M.Wurbel and M.Rabah</p>
+    </div>
+  </div><hr>
+  
+  <!-- Postes -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Notions used</h4>
+    </div>
+    <ul class="w3-ul w3-hoverable w3-white">
+      <li class="w3-padding-16">
+        <img src="images/python-logo-only.png" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Python</span><br>
+        <span>Coded functions and programs</span>
+      </li>
+      <li class="w3-padding-16">
+        <img src="images/script.jpg" alt="Image" class="w3-left w3-margin-right" style="width:50px">
+        <span class="w3-large">Scripting</span><br>
+        <span>Traitement de fichiers de configuration</span>
+      </li> 
+      
+    </ul>
+  </div>
+  <hr> 
+</div>
+</div><br>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+// Récupération des boutons "Read More" par leur ID
+const readMoreBtn1 = document.getElementById("read-more-btn-1");
+const readMoreBtn2 = document.getElementById("read-more-btn-2");
+
+// Récupération des sections supplémentaires par leur classe CSS
+const additionalText1 = document.querySelector(".additional-text-1");
+const additionalText2 = document.querySelector(".additional-text-2");
+
+// Ajout d'un gestionnaire d'événement click pour chaque bouton "Read More"
+readMoreBtn1.addEventListener("click", function() {
+  if (additionalText1.style.display === "none") {
+    additionalText1.style.display = "block";
+    readMoreBtn1.innerText = "READ LESS «";
+  } else {
+    additionalText1.style.display = "none";
+    readMoreBtn1.innerText = "READ MORE »";
+  }
+});
+
+readMoreBtn2.addEventListener("click", function() {
+  if (additionalText2.style.display === "none") {
+    additionalText2.style.display = "block";
+    readMoreBtn2.innerText = "READ LESS «";
+  } else {
+    additionalText2.style.display = "none";
+    readMoreBtn2.innerText = "READ MORE »";
+  }
+});
+</script>
+
+
+
+</body>
+</html>
